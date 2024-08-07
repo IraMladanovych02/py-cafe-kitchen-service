@@ -1,0 +1,354 @@
+[
+  {
+    "model": "cafe.dish_type",
+    "pk": 1,
+    "fields": {
+      "name": "coffee"
+    }
+  },
+  {
+    "model": "cafe.dish_type",
+    "pk": 2,
+    "fields": {
+      "name": "cakes"
+    }
+  },
+  {
+    "model": "cafe.dish_type",
+    "pk": 3,
+    "fields": {
+      "name": "baking"
+    }
+  },
+  {
+    "model": "cafe.dish_type",
+    "pk": 4,
+    "fields": {
+      "name": "Tea"
+    }
+  },
+  {
+    "model": "cafe.dish_type",
+    "pk": 5,
+    "fields": {
+      "name": "non-alcohol drinks"
+    }
+  },
+  {
+    "model": "cafe.cook",
+    "pk": 1,
+    "fields": {
+      "password": "pbkdf2_sha256$320000$6uM28XWOFX6ewyloJzjqmt$L+ZhofPylneoaL2iZS4sZu4ZMUNb4oIevfAdzOMn/eE=",
+      "last_login": "2022-08-08T14:14:03Z",
+      "is_superuser": true,
+      "username": "admin.user",
+      "first_name": "Admin",
+      "last_name": "User",
+      "email": "admin.user@taxi.com",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2022-08-08T13:58:29Z",
+      "years_of_experience": 1,
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "cafe.cook",
+    "pk": 2,
+    "fields": {
+      "password": "pbkdf2_sha256$320000$73Z1Y57bcoscZ37s9rE9v0$4SEQ0TtXwJKzO5/CRdFSrTifatiPjkZ38gM2H8Kqsdg=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "joyce.byers",
+      "first_name": "Joyce",
+      "last_name": "Byers",
+      "email": "joyce.byers@taxi.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2022-08-08T14:17:04Z",
+      "years_of_experience": 3,
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "cafe.cook",
+    "pk": 3,
+    "fields": {
+      "password": "pbkdf2_sha256$320000$QtPol3T7x9quBj4BnbnVwW$UwT4kihkRfSvQEWEeuqVKwMgis2ikKVZfJDBcQMvOKY=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "jim.hopper",
+      "first_name": "Jim",
+      "last_name": "Hopper",
+      "email": "jim.hopper@taxi.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2022-08-08T14:19:09Z",
+      "years_of_experience": 5,
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "cafe.cook",
+    "pk": 4,
+    "fields": {
+      "password": "pbkdf2_sha256$320000$9yU0PLTDKlL02PedUtk2l1$LKjj8O1xGiPGEkDpjsHk87db1iLgt8dgDqECzcsivio",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "jonathan.byers",
+      "first_name": "Jonathan",
+      "last_name": "Byers",
+      "email": "jonathan.byers@taxi.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2022-08-08T14:19:09Z",
+      "years_of_experience": 8,
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "cafe.cook",
+    "pk": 5,
+    "fields": {
+      "password": "pbkdf2_sha256$320000$9yU0PLTDKlL02PedUtk2l1$LKjj8O1xGiPGEkDpjsHk87db1iLgt8dgDqECzcsivio",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "dustin.henderson",
+      "first_name": "Dustin",
+      "last_name": "Henderson",
+      "email": "dustin.henderson@taxi.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2022-08-09T14:19:09Z",
+      "years_of_experience": 3,
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "cafe.cook",
+    "pk": 6,
+    "fields": {
+      "password": "pbkdf2_sha256$320000$9yU0PLTDKlL02PedUtk2l2$LKjj8O1xGiPGEkDpjsHk87db1iLgt8dgDqECzcsivio",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "mike.wheeler",
+      "first_name": "Mike",
+      "last_name": "Wheeler",
+      "email": "mike.wheeler@taxi.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2022-08-09T14:19:09Z",
+      "years_of_experience": 8,
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "cafe.cook",
+    "pk": 7,
+    "fields": {
+      "password": "pbkdf2_sha256$320000$9yU0PLTDKlL02PedUtk2l2$LKjj8O1xGiPGEkDpjsHk87db1iLgt8dgDqECzcsivio",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "lucas.sinclair",
+      "first_name": "Lucas",
+      "last_name": "Sinclair",
+      "email": "lucas.sinclair@taxi.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2022-08-09T14:19:09Z",
+      "years_of_experience": 4,
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "cafe.dish",
+    "pk": 1,
+    "fields": {
+      "name": "Espresso",
+      "manufacturer": 1,
+      "cooks": [
+        3
+      ]
+    }
+  }
+]
+
+//    }
+//  }
+//  {
+//    "model": "taxi.car",
+//    "pk": 2,
+//    "fields": {
+//      "model": "Toyota Yaris",
+//      "manufacturer": 4,
+//      "drivers": [
+//        2,
+//        3
+//      ]
+//    }
+//  },
+//  {
+//    "model": "taxi.car",
+//    "pk": 3,
+//    "fields": {
+//      "model": "Suzuki Vitara",
+//      "manufacturer": 5,
+//      "drivers": [
+//        1,
+//        2,
+//        5
+//      ]
+//    }
+//  },
+//  {
+//    "model": "taxi.car",
+//    "pk": 4,
+//    "fields": {
+//      "model": "Mitsubishi Eclipse",
+//      "manufacturer": 6,
+//      "drivers": [
+//        1
+//      ]
+//    }
+//  },
+//  {
+//    "model": "taxi.car",
+//    "pk": 5,
+//    "fields": {
+//      "model": "Mitsubishi Lancer",
+//      "manufacturer": 6,
+//      "drivers": [
+//        11
+//      ]
+//    }
+//  },
+//  {
+//    "model": "taxi.car",
+//    "pk": 6,
+//    "fields": {
+//      "model": "Ford Focus",
+//      "manufacturer": 2,
+//      "drivers": [
+//        4
+//      ]
+//    }
+//  },
+//  {
+//    "model": "taxi.car",
+//    "pk": 7,
+//    "fields": {
+//      "model": "Cadillac Escalade",
+//      "manufacturer": 3,
+//      "drivers": [
+//        5
+//      ]
+//    }
+//  },
+//  {
+//    "model": "taxi.car",
+//    "pk": 8,
+//    "fields": {
+//      "model": "Arcfox Alpha-S",
+//      "manufacturer": 13,
+//      "drivers": [
+//      ]
+//    }
+//  },
+//  {
+//    "model": "taxi.car",
+//    "pk": 9,
+//    "fields": {
+//      "model": "Beijing EX5",
+//      "manufacturer": 13,
+//      "drivers": [
+//        9
+//      ]
+//    }
+//  },
+//  {
+//    "model": "taxi.car",
+//    "pk": 10,
+//    "fields": {
+//      "model": "MG 5 II",
+//      "manufacturer": 11,
+//      "drivers": [
+//        8
+//      ]
+//    }
+//  },
+//  {
+//    "model": "taxi.car",
+//    "pk": 11,
+//    "fields": {
+//      "model": "Rising Auto ER6",
+//      "manufacturer": 11,
+//      "drivers": [
+//        7,
+//        3
+//      ]
+//    }
+//  },
+//  {
+//    "model": "taxi.car",
+//    "pk": 12,
+//    "fields": {
+//      "model": "SP250",
+//      "manufacturer": 8,
+//      "drivers": [
+//        6
+//      ]
+//    }
+//  },
+//  {
+//    "model": "taxi.car",
+//    "pk": 13,
+//    "fields": {
+//      "model": "Daimler Sovereign",
+//      "manufacturer": 8,
+//      "drivers": [
+//        11,
+//        7
+//      ]
+//    }
+//  },
+//  {
+//    "model": "taxi.car",
+//    "pk": 14,
+//    "fields": {
+//      "model": "X5 M",
+//      "manufacturer": 14,
+//      "drivers": [
+//        10
+//      ]
+//    }
+//  },
+//  {
+//    "model": "taxi.car",
+//    "pk": 15,
+//    "fields": {
+//      "model": "Floride",
+//      "manufacturer": 10,
+//      "drivers": [
+//        9
+//      ]
+//    }
+//  },
+//  {
+//    "model": "taxi.car",
+//    "pk": 16,
+//    "fields": {
+//      "model": "MX-30",
+//      "manufacturer": 12,
+//      "drivers": [
+//        4
+//      ]
+//    }
+//  }
+//]
