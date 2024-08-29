@@ -1,11 +1,90 @@
 {% extends "base.html" %}
+{% load crispy_forms_filters %}
+
 {% block content %}
-  <h1>Dish List</h1>
+  <!-- Navigation Bar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="{% url 'cafe:index' %}">Back to main page</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'cafe:index' %}">Home page</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'cafe:dish-list' %}">Dishes</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'cafe:dish-types-list' %}">Dish Types</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{% url 'cafe:cook-list' %}">Cook</a>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+  <!-- Header with Add Dish Button -->
+  <div class="d-flex justify-content-between align-items-center mb-3">
+    <h1 class="display-4">Dish List</h1>
+    <a href="{% url 'cafe:dish-create' %}" class="btn btn-primary">
+      <i class="fas fa-plus"></i> Add Dish
+    </a>
+  </div>
+
+  <!-- Search Form -->
+  <form method="get" action="" class="form-inline mb-3">
+    <div class="input-group">
+      {{ search_form|crispy }}
+      <div class="input-group-append">
+        <button class="btn btn-secondary" type="submit">
+          <i class="fas fa-search"></i> Search
+        </button>
+      </div>
+    </div>
+  </form>
+
+  <!-- Dish List Table -->
   {% if dish_list %}
-    <ul>
-    {% for dish in dish_list %}
-      <li><a href="#">{{ dish.name }}{{ dish.price }}</a></li>
-    {% endfor %}
-    </ul>
+    <div class="table-responsive">
+      <table class="table table-hover table-bordered">
+        <thead class="thead-dark">
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Update</th>
+            <th>Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+        {% for dish in dish_list %}
+          <tr>
+            <td>{{ dish.id }}</td>
+            <td>{{ dish.name }}</td>
+            <td>{{ dish.price }}</td>
+            <td>
+              <a href="{% url 'cafe:dish-update' pk=dish.id %}" class="btn btn-sm btn-warning">
+                <i class="fas fa-edit"></i> Update
+              </a>
+            </td>
+            <td>
+              <a href="{% url 'cafe:dish-delete' pk=dish.id %}" class="btn btn-sm btn-danger" style="color: white">
+                <i class="fas fa-trash-alt"></i> Delete
+              </a>
+            </td>
+          </tr>
+        {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  {% else %}
+    <!-- Message for Empty Dish List -->
+    <p class="text-muted">There are no dishes in the service.</p>
   {% endif %}
+</div>
 {% endblock %}

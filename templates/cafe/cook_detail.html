@@ -1,29 +1,40 @@
 {% extends 'base.html' %}
 
 {% block content %}
-  <h1>Cook: {{ Cook.username }}
-    <a href="{% url 'cafe:cook-delete' pk=cook.id %}" class="btn btn-danger link-to-page">
-      Delete
-    </a>
+  <div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <h1 class="text-primary">
+        Cook: {{ cook.username }}
+      </h1>
+      <div>
+        <a href="{% url 'cafe:cook-update' pk=cook.id %}" class="btn btn-secondary btn-sm me-2">
+          Update
+        </a>
+        <a href="{% url 'cafe:cook-delete' pk=cook.id %}" class="btn btn-danger btn-sm">
+          Delete
+        </a>
+      </div>
+    </div>
 
-    <a href="{% url 'cafe:cook-update' pk=cook.id %}" class="btn btn-secondary link-to-page">
-      Update
-    </a>
-      {% if dish in user.dish.all %}
-        <a href="{% url 'cafe:toggle-assign-to-dish' pk=dish.id %}" class="btn btn-danger link-to-page">
-        Delete me from this dish
-      </a>
-    {% endif %}
-  </h1>
-  <p><strong>First name:</strong> {{ cook.first_name }}</p>
-  <p><strong>Last name:</strong> {{ cook.last_name }}</p>
-  <p><strong>Years of experience:</strong> {{ cook.year_of_experience }}</p>
-  <div class="ml-3">
-    <h3>Dish</h3>
-    {% for dish in dish_type.dish_set.all %}
-      <hr>
-      <p class="text-muted">{{ dish.id }}</p>
-      <p>{{ dish.name }}</p>
-    {% endfor %}
+    <div class="mb-4">
+      <p><strong>First Name:</strong> {{ cook.username }}</p>
+      <p><strong>Years of Experience:</strong> {{ cook.years_of_experience }}</p>
+    </div>
+
+    <div>
+      <h3 class="mb-3">Dishes</h3>
+      {% if cook.dish_set.all %}
+        <ul class="list-unstyled">
+          {% for dish in cook.dish_set.all %}
+            <li class="border rounded p-3 mb-2 bg-light">
+              <p class="text-muted mb-1">Dish ID: {{ dish.id }}</p>
+              <p><strong>Name:</strong> {{ dish.name }}</p>
+            </li>
+          {% endfor %}
+        </ul>
+      {% else %}
+        <p class="text-muted">No dishes assigned to this cook.</p>
+      {% endif %}
+    </div>
   </div>
 {% endblock %}
