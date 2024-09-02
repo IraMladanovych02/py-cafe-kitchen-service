@@ -11,6 +11,12 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 import os
 from pathlib import Path
+from dotenv import load_dotenv
+
+load_dotenv()
+
+DATABASE_URL = os.getenv("DATABASE_URL")
+SECRET_KEY = os.getenv("SECRET_KEY")
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -20,10 +26,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-!xy0wv$rwaqm+b(_61g4+&ve%m*6(kv=@91&_%!0l##^2campv'
-
-# SECURITY WARNING: don't run with debug turned on in production!
+# SECRET_KEY = 'django-insecure-!xy0wv$rwaqm+b(_61g4+&ve%m*6(kv=@91&_%!0l##^2campv'
+#
+# # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+# DATABASE_URL = os.getenv('db.sqlite3')
 
 ALLOWED_HOSTS = []
 
