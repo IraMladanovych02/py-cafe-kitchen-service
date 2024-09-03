@@ -1,9 +1,11 @@
 from django.http import HttpResponse, HttpRequest, HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404
 from django.urls import reverse_lazy
+from django.utils.decorators import method_decorator
 from django.views import generic
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.views.generic import View
 
 from cafe.models import DishType, Dish, Cook
 from cafe.forms import CookCreationForm, CookYearOfExperienceUpdateForm, DishSearchForm
@@ -121,13 +123,15 @@ class CookExperienceUpdateView(LoginRequiredMixin, generic.UpdateView):
     success_url = reverse_lazy("cafe:cook-list")
 
 
-@login_required
-def toggle_assign_to_dish(request, pk):
-    cook = Cook.objects.get(id=request.user.id)
-    if (
-        Dish.objects.get(id=pk) in cook.dish.all()
-    ):
-        cook.dish.remove(pk)
-    else:
-        cook.dish.add(pk)
-    return HttpResponseRedirect(reverse_lazy("cafe:cook-detail", args=[pk]))
+@method_decorator(login_required, name='dispatch')
+class ToggleAssignToDishView(View):
+    def get(self, request, pk):
+        cook = get_object_or_404(Cook, id=request.user.id)
+        dish = get_object_or_404(Dish, id=pk)
+
+        if dish in cook.dish.all():
+            cook.dish.remove(dish)
+        else:
+            cook.dish.add(dish)
+
+        return HttpResponseRedirect(reverse_lazy("cafe:cook-detail", args=[cook.id]))
