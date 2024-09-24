@@ -30,5 +30,3 @@ class ModelTests(TestCase):
         self.assertEqual(cook.username, username)
         self.assertEqual(cook.years_of_experience, years_of_experience)
         self.assertTrue(cook.check_password(password))
-
-
