@@ -101,11 +101,12 @@ USE_I18N = True
 
 USE_TZ = True
 
-STATIC_URL = 'static/'
-
+STATIC_URL = "/static/"
 STATICFILES_DIRS = [
-    BASE_DIR / "static",
+    os.path.join(BASE_DIR, "static")
 ]
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")  # Директорія для зібраних файлів
+
 
 ASSETS_ROOT = os.getenv("ASSETS_ROOT", '/static/assets')
 

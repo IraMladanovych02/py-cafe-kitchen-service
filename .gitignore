@@ -5,3 +5,5 @@ identifier.sqlite
 venv/
 db.sqlite3
 .env
+static
+staticfiles
