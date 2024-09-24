@@ -34,18 +34,14 @@
 ### Dish Types
 - **`GET /dish_types/`**  
   **Description**: Lists all dish types.  
-  **View**: `DishTypeListView`  
+  **View**: `DishTypeListCreateView`  
   **Name**: `dish-types-list`
 
-- **`GET /dish_types/create/`**  
-  **Description**: Displays a form to create a new dish type.  
-  **View**: `DishTypeCreateView`  
-  **Name**: `dish-types-create`
 
-- **`POST /dish_types/create/`**  
+- **`POST /dish_types/`**  
   **Description**: Submits the form to create a new dish type.  
-  **View**: `DishTypeCreateView`  
-  **Name**: `dish-types-create`
+  **View**: `DishTypeListCreateView`  
+  **Name**: `dish-types-list`
 
 - **`GET /dish_types/<int:pk>/update/`**  
   **Description**: Displays a form to update an existing dish type identified by `<int:pk>`.  
@@ -66,7 +62,7 @@
 
 - **`GET /dish/`**  
   **Description**: Lists all dishes.  
-  **View**: `DishListView`  
+  **View**: `DishListCreateView`  
   **Name**: `dish-list`
 
 - **`GET /dish/<int:pk>/`**  
@@ -74,15 +70,11 @@
   **View**: `DishDetailView`  
   **Name**: `dish-detail`
 
-- **`GET /dish/create/`**  
-  **Description**: Displays a form to create a new dish.  
-  **View**: `DishCreateView`  
-  **Name**: `dish-create`
 
 - **`POST /dish/create/`**  
   **Description**: Submits the form to create a new dish.  
-  **View**: `DishCreateView`  
-  **Name**: `dish-create`
+  **View**: `DishListCreateView`  
+  **Name**: `dish-list`
 
 - **`GET /dish/<int:pk>/update/`**  
   **Description**: Displays a form to update an existing dish identified by `<int:pk>`.  
@@ -103,7 +95,7 @@
 
 - **`GET /cooks/`**  
   **Description**: Lists all cooks.  
-  **View**: `CookListView`  
+  **View**: `CookListCreateView`  
   **Name**: `cook-list`
 
 - **`GET /cooks/<int:pk>/`**  
@@ -111,15 +103,11 @@
   **View**: `CookDetailView`  
   **Name**: `cook-detail`
 
-- **`GET /cooks/create/`**  
-  **Description**: Displays a form to create a new cook.  
-  **View**: `CookCreateView`  
-  **Name**: `cook-create`
 
 - **`POST /cooks/create/`**  
   **Description**: Submits the form to create a new cook.  
-  **View**: `CookCreateView`  
-  **Name**: `cook-create`
+  **View**: `CookListCreateView`  
+  **Name**: `cook-list`
 
 - **`GET /cooks/<int:pk>/update/`**  
   **Description**: Displays a form to update the experience of a cook identified by `<int:pk>`.  

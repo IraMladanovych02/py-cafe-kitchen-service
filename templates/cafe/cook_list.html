@@ -20,9 +20,8 @@
           <a class="nav-link" href="{% url 'cafe:dish-types-list' %}">Dish Types</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="{% url 'cafe:cook-list' %}">Cook</a>
+          <a class="nav-link active" aria-current="page" href="{% url 'cafe:cook-list' %}">Cooks</a>
         </li>
-        
       </ul>
     </div>
   </div>
@@ -32,12 +31,23 @@
 <div class="container mt-4">
   <div class="d-flex justify-content-between align-items-center">
     <h1>Cook List</h1>
-    <a class="btn btn-primary" href="{% url 'cafe:cook-create' %}">Add New Cook</a>
+  </div>
+
+  <!-- Form to Add New Cook -->
+  <div class="card mt-4">
+    <div class="card-body">
+      <h5 class="card-title">Add New Cook</h5>
+      <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-success">Add Cook</button>
+      </form>
+    </div>
   </div>
 
   <!-- Cook List -->
   {% if cook_list %}
-    <ul class="list-group mt-3">
+    <ul class="list-group mt-4">
       {% for cook in cook_list %}
         <li class="list-group-item d-flex justify-content-between align-items-center">
           <a href="{% url 'cafe:cook-detail' pk=cook.id %}" class="text-decoration-none">
@@ -47,7 +57,7 @@
       {% endfor %}
     </ul>
   {% else %}
-    <p class="mt-3">No cooks available.</p>
+    <p class="mt-4">No cooks available.</p>
   {% endif %}
 </div>
 {% endblock %}
