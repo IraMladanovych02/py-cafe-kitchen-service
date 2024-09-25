@@ -16,11 +16,12 @@ from dotenv import load_dotenv
 load_dotenv()
 
 DATABASE_URL = os.getenv("DATABASE_URL")
-SECRET_KEY = os.getenv("SECRET_KEY")
+# SECRET_KEY = os.getenv("SECRET_KEY")
+SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY", "SECRET_KEY")
 BASE_DIR = Path(__file__).resolve().parent.parent
-DEBUG = True
+DEBUG = os.environ.get("DJANGO_DEBUG", "") != "False"
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["127.0.0.1"]
 
 INSTALLED_APPS = [
     'django.contrib.admin',
