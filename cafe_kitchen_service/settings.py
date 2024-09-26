@@ -20,11 +20,11 @@ load_dotenv()
 DATABASE_URL = os.getenv("DATABASE_URL")
 # SECRET_KEY = os.getenv("SECRET_KEY")
 
-SECRET_KEY = os.environ["DJANGO_SECRET_KEY"]
+SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", "default-secret-key")
 BASE_DIR = Path(__file__).resolve().parent.parent
 DEBUG = os.environ.get("DJANGO_DEBUG", "") != "False"
 
-ALLOWED_HOSTS = ["127.0.0.1"]
+ALLOWED_HOSTS = ["127.0.0.1", "py-cafe-kitchen-service.onrender.com"]
 
 INSTALLED_APPS = [
     "django.contrib.admin",
@@ -112,10 +112,10 @@ USE_TZ = True
 STATIC_URL = "/static/"
 
 STATICFILES_DIRS = [
-    BASE_DIR / "static",
+    os.path.join(BASE_DIR, 'static'),
 ]
 
-STATIC_ROOT = BASE_DIR / "staticfiles/"
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 
 ASSETS_ROOT = os.getenv("ASSETS_ROOT", "/static/assets")
