@@ -68,7 +68,9 @@ class DishListCreateView(LoginRequiredMixin, View):
             form.save()
             return redirect("cafe:dish-list")
         dish_list = Dish.objects.all()
-        return render(request, self.template_name, {"dish_list": dish_list, "form": form})
+        return render(
+            request, self.template_name, {"dish_list": dish_list, "form": form}
+        )
 
 
 class DishDetailView(LoginRequiredMixin, generic.DetailView):
@@ -100,7 +102,9 @@ class CookListCreateView(LoginRequiredMixin, View):
             form.save()
             return redirect("cafe:cook-list")
         cook_list = Cook.objects.all()
-        return render(request, self.template_name, {"cook_list": cook_list, "form": form})
+        return render(
+            request, self.template_name, {"cook_list": cook_list, "form": form}
+        )
 
 
 class CookDetailView(LoginRequiredMixin, generic.DetailView):
@@ -121,7 +125,7 @@ class CookExperienceUpdateView(LoginRequiredMixin, generic.UpdateView):
     success_url = reverse_lazy("cafe:cook-list")
 
 
-@method_decorator(login_required, name='dispatch')
+@method_decorator(login_required, name="dispatch")
 class ToggleAssignToDishView(View):
     def get(self, request, pk):
         cook = get_object_or_404(Cook, id=request.user.id)
