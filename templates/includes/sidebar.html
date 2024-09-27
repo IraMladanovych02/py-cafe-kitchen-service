@@ -1,0 +1,23 @@
+<div class="sidebar bg-light p-3" style="width: 150px;">
+  <ul class="list-group">
+    <!-- User Authentication Links -->
+    {% if user.is_authenticated %}
+      <li class="list-group-item">
+        <span class="fw-bold">User:</span> 
+        <a href="{{ user.get_absolute_url }}" class="text-decoration-none">{{ user.get_username }}</a>
+      </li>
+      <li class="list-group-item">
+        <a href="{% url 'logout' %}?next={{request.path}}" class="text-decoration-none text-danger">Logout</a>
+      </li>
+    {% else %}
+      <li class="list-group-item">
+        <a href="{% url 'login' %}?next={{request.path}}" class="text-decoration-none text-success">Login</a>
+      </li>
+    {% endif %}
+
+    <!-- Divider -->
+    <li class="list-group-item border-0"></li>
+
+    
+  </ul>
+</div>

@@ -1,0 +1,222 @@
+[
+  {
+    "model": "cafe.dishtype",
+    "pk": 1,
+    "fields": {
+      "name": "coffee"
+    }
+  },
+  {
+    "model": "cafe.dishtype",
+    "pk": 2,
+    "fields": {
+      "name": "tea"
+    }
+  },
+  {
+    "model": "cafe.dishtype",
+    "pk": 3,
+    "fields": {
+      "name": "non-alcohol drinks"
+    }
+  },
+  {
+    "model": "cafe.dishtype",
+    "pk": 4,
+    "fields": {
+      "name": "cakes"
+    }
+  },
+  {
+    "model": "cafe.dishtype",
+    "pk": 5,
+    "fields": {
+      "name": "bakery"
+    }
+  },
+  {
+    "model": "cafe.ingredients",
+    "pk": 1,
+    "fields": {
+      "name": "flour"
+    }
+  },
+  {
+    "model": "cafe.ingredients",
+    "pk": 2,
+    "fields": {
+      "name": "sugar"
+    }
+  },
+  {
+    "model": "cafe.ingredients",
+    "pk": 3,
+    "fields": {
+      "name": "milk"
+    }
+  },
+  {
+    "model": "cafe.ingredients",
+    "pk": 4,
+    "fields": {
+      "name": "coffee beans"
+    }
+  },
+  {
+    "model": "cafe.ingredients",
+    "pk": 5,
+    "fields": {
+      "name": "tea leaves"
+    }
+  },
+  {
+    "model": "cafe.dish",
+    "pk": 1,
+    "fields": {
+      "name": "Espresso",
+      "price": "2.50",
+      "dish_type": 1,
+      "cooks": [1],
+      "ingredients": [4]
+    }
+  },
+  {
+    "model": "cafe.dish",
+    "pk": 2,
+    "fields": {
+      "name": "Black Tea",
+      "price": "1.50",
+      "dish_type": 2,
+      "cooks": [2],
+      "ingredients": [5]
+    }
+  },
+  {
+    "model": "cafe.dish",
+    "pk": 3,
+    "fields": {
+      "name": "Lemonade",
+      "price": "3.00",
+      "dish_type": 3,
+      "cooks": [3],
+      "ingredients": [3, 2]
+    }
+  },
+  {
+    "model": "cafe.dish",
+    "pk": 4,
+    "fields": {
+      "name": "Chocolate Cake",
+      "price": "4.50",
+      "dish_type": 4,
+      "cooks": [4],
+      "ingredients": [1, 2, 3]
+    }
+  },
+  {
+    "model": "cafe.dish",
+    "pk": 5,
+    "fields": {
+      "name": "Croissant",
+      "price": "2.00",
+      "dish_type": 5,
+      "cooks": [5],
+      "ingredients": [1, 2, 3]
+    }
+  },
+  {
+    "model": "cafe.cook",
+    "pk": 1,
+    "fields": {
+      "password": "pbkdf2_sha256$320000$example$examplehash",
+      "last_login": null,
+      "is_superuser": true,
+      "username": "admin",
+      "first_name": "Admin",
+      "last_name": "User",
+      "email": "admin@cafe.com",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2024-08-06T13:58:29Z",
+      "years_of_experience": 10,
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "cafe.cook",
+    "pk": 2,
+    "fields": {
+      "password": "pbkdf2_sha256$320000$example$examplehash",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "joyce.byers",
+      "first_name": "Joyce",
+      "last_name": "Byers",
+      "email": "joyce.byers@cafe.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2024-08-06T14:17:04Z",
+      "years_of_experience": 3,
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "cafe.cook",
+    "pk": 3,
+    "fields": {
+      "password": "pbkdf2_sha256$320000$example$examplehash",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "jim.hopper",
+      "first_name": "Jim",
+      "last_name": "Hopper",
+      "email": "jim.hopper@cafe.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2024-08-06T14:19:09Z",
+      "years_of_experience": 5,
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "cafe.cook",
+    "pk": 4,
+    "fields": {
+      "password": "pbkdf2_sha256$320000$example$examplehash",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "jonathan.byers",
+      "first_name": "Jonathan",
+      "last_name": "Byers",
+      "email": "jonathan.byers@cafe.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2024-08-06T14:19:09Z",
+      "years_of_experience": 8,
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "cafe.cook",
+    "pk": 5,
+    "fields": {
+      "password": "pbkdf2_sha256$320000$example$examplehash",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "dustin.henderson",
+      "first_name": "Dustin",
+      "last_name": "Henderson",
+      "email": "dustin.henderson@cafe.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2024-08-09T14:19:09Z",
+      "years_of_experience": 3,
+      "groups": [],
+      "user_permissions": []
+    }
+  }
+]
