@@ -18,7 +18,6 @@ from dotenv import load_dotenv
 load_dotenv()
 
 DATABASE_URL = os.getenv("DATABASE_URL")
-# SECRET_KEY = os.getenv("SECRET_KEY")
 
 SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", "default-secret-key")
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -109,16 +108,16 @@ USE_I18N = True
 
 USE_TZ = True
 
-STATIC_URL = "/static/"
+STATIC_URL = "static/"
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),
+    BASE_DIR / "static",
 ]
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = "staticfiles/"
 
+ASSETS_ROOT = "/static/assets"
 
-ASSETS_ROOT = os.getenv("ASSETS_ROOT", "/static/assets")
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
