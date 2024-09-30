@@ -20,7 +20,7 @@ load_dotenv()
 DATABASE_URL = os.getenv("DATABASE_URL")
 # SECRET_KEY = os.getenv("SECRET_KEY")
 
-SECRET_KEY = os.environ["DJANGO_SECRET_KEY"]
+SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY", 'django-insecure-!xy0wv$rwaqm+b(_61g4+&ve%m*6(kv=@91&_%!0l##^2campv')
 BASE_DIR = Path(__file__).resolve().parent.parent
 DEBUG = os.environ.get("DJANGO_DEBUG", "") != "False"
 
