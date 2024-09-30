@@ -109,16 +109,16 @@ USE_I18N = True
 
 USE_TZ = True
 
-STATIC_URL = "/static/"
+STATIC_URL = "static/"
+
+STATIC_ROOT = "staticfiles/"
 
 STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
 
-STATIC_ROOT = BASE_DIR / "staticfiles/"
 
-
-ASSETS_ROOT = os.getenv("ASSETS_ROOT", "/static/assets")
+ASSETS_ROOT = "/static/assets"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
