@@ -20,9 +20,7 @@ class DishForm(forms.ModelForm):
 class CookCreationForm(UserCreationForm):
     class Meta(UserCreationForm.Meta):
         model = Cook
-        fields = UserCreationForm.Meta.fields + (
-            "years_of_experience",
-        )
+        fields = UserCreationForm.Meta.fields + ("years_of_experience",)
 
 
 class CookYearOfExperienceUpdateForm(forms.ModelForm):
