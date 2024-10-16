@@ -19,7 +19,7 @@ load_dotenv()
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = os.environ["DJANGO_SECRET_KEY"]
-DEBUG = os.environ.get("DJANGO_DEBUG", "") != False
+DEBUG = os.getenv("DJANGO_DEBUG", "") != "False"
 
 ALLOWED_HOSTS = ["127.0.0.1", "py-cafe-kitchen-service-1.onrender.com"]
 
@@ -111,12 +111,13 @@ USE_TZ = True
 STATIC_URL = "/static/"
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR / "static")
+    BASE_DIR / 'static',
 ]
+
 STATIC_ROOT = "staticfiles/"
 
 
-ASSETS_ROOT = os.getenv("ASSETS_ROOT", '/static/assets')
+ASSETS_ROOT = '/static/assets'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
