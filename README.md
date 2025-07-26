@@ -4,6 +4,26 @@
 ### Description
 - Cafe Kitchen Service is a web application built with Django to help cafes manage their dishes and dish types efficiently. The application provides an easy-to-use interface for adding, updating, and deleting dishes, as well as categorizing them into different types.
 
+### Project URL:
+(Wait a minute for the server to load)
+
+https://py-cafe-kitchen-service-1.onrender.com
+
+### Login Information
+Use the following credentials to login:
+
+- Username: user
+- Password: user12345
+
+### Technologies used:
+
+In this project I used the following technologies:
+
+- Python
+- Django
+- HTML
+- CSS
+
 ### Installation
 1. Fork the repo (GitHub repository)
 2. Clone the forked repo
@@ -15,10 +35,18 @@
 `pip install -r requirements.txt`
 4. Create superuser to manage the project:
 `python manage.py createsuperuser`
-5. Run server to check the website (`python manage.py runserver`)
+5. Run server to check the website
+6. Run pytest to check if your solution is correct 
+(from command line, or using PyCharm pytest support)
+7. Run flake8 to see if your code follows the flake8 rules
+8. Save the solution  `git commit -am 'Explanation to changes'`
+9. Push the solution to the repo `git push origin develop`
 
 
+#
 ### Features
 - Powerful admin panel for advanced managing
 - Managing kitchen service directly from website interface
 - Authentication functionality for User
+
+---

@@ -16,8 +16,8 @@ class AdminSiteTests(TestCase):
         )
 
     def test_cook_years_of_experience_listed(self):
-        """ "
-        Test that cook`s years of experience is listed in list_display on cook admin page
+        """
+        Test that cook`s years of experience is listed in list_display
         """
         url = reverse("admin:index")
         res = self.client.get(url)

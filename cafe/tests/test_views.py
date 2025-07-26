@@ -28,13 +28,17 @@ class PrivateTest(TestCase):
         response = self.client.get(DISH_TYPE_URL)
         self.assertEqual(response.status_code, 200)
         dish_types = DishType.objects.all()
-        self.assertEqual(list(response.context["dish_types_list"]), list(dish_types))
+        self.assertEqual(
+            list(response.context["dish_types_list"]), list(dish_types)
+        )
         self.assertTemplateUsed(response, "cafe/dish_types_list.html")
 
     def test_retrieve_dish(self):
         dish_type = DishType.objects.create(name="Main Course")
         Dish.objects.create(name="pizza", price="10.50", dish_type=dish_type)
-        Dish.objects.create(name="Karbonara", price="12.50", dish_type=dish_type)
+        Dish.objects.create(
+            name="Karbonara", price="12.50", dish_type=dish_type
+        )
 
         response = self.client.get(DISH_URL)
         self.assertEqual(response.status_code, 200)

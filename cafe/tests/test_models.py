@@ -12,8 +12,12 @@ class ModelTests(TestCase):
 
     def test_dish_str(self):
         dish_type = DishType.objects.create(name="Test")
-        dish = Dish.objects.create(name="Test", price=10.50, dish_type=dish_type)
-        self.assertEqual(str(dish), f"{dish.name} ({dish.price}, {dish.dish_type})")
+        dish = Dish.objects.create(
+            name="Test", price=10.50, dish_type=dish_type
+        )
+        self.assertEqual(
+            str(dish), f"{dish.name} ({dish.price}, {dish.dish_type})"
+        )
 
     def test_create_cook_including_years_of_experience(self):
         username = "Test"

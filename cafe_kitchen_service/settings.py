@@ -22,9 +22,10 @@ DATABASE_URL = os.getenv("DATABASE_URL")
 
 SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY", 'django-insecure-!xy0wv$rwaqm+b(_61g4+&ve%m*6(kv=@91&_%!0l##^2campv')
 BASE_DIR = Path(__file__).resolve().parent.parent
-DEBUG = os.environ.get("DJANGO_DEBUG", "") != "False"
 
-ALLOWED_HOSTS = ["127.0.0.1"]
+DEBUG = os.getenv("DJANGO_DEBUG", "") != "False"
+
+ALLOWED_HOSTS = ["127.0.0.1", "py-cafe-kitchen-service-1.onrender.com"]
 
 INSTALLED_APPS = [
     "django.contrib.admin",
@@ -126,9 +127,11 @@ LOGGING = {
 
 
 ROOT_URLCONF = "cafe_kitchen_service.urls"
+ROOT_URLCONF = "cafe_kitchen_service.urls"
 
 TEMPLATES = [
     {
+
         "BACKEND": "django.template.backends.django.DjangoTemplates",
         "DIRS": [BASE_DIR / "templates"],
         "APP_DIRS": True,
@@ -153,6 +156,12 @@ DATABASES = {
         "NAME": BASE_DIR / "db.sqlite3",
     }
 }
+
+DATABASE_URL = os.getenv("DATABASE_URL")
+
+db_from_env = dj_database_url.config(conn_max_age=500)
+DATABASES["default"].update(db_from_env)
+
 
 db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES["default"].update(db_from_env)
@@ -187,6 +196,7 @@ STATIC_ROOT = "staticfiles/"
 STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")  # Директорія для зібраних файлів
 
 
 ASSETS_ROOT = "/static/assets"
