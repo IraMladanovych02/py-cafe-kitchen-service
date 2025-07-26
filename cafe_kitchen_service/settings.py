@@ -33,6 +33,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "debug_toolbar",
     "cafe",
     "crispy_forms",
     "crispy_bootstrap4",
@@ -50,9 +51,79 @@ MIDDLEWARE = [
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
+    "debug_toolbar.middleware.DebugToolbarMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
+
+
+LOG_DIR = os.path.join(BASE_DIR, "logs")
+
+LOGGING = {
+    "version": 1,
+    "disable_existing_loggers": False,
+    "formatters": {
+        "verbose": {
+            "format": "[{asctime}] {levelname} {name} {message}",
+            "style": "{",
+        },
+        "simple": {
+            "format": "{levelname} {name} {message}",
+            "style": "{",
+        },
+    },
+    "handlers": {
+        "console": {
+            "level": "DEBUG",
+            "class": "logging.StreamHandler",
+            "formatter": "simple",
+        },
+        "cafe_file": {
+            "level": "INFO",
+            "class": "logging.handlers.TimedRotatingFileHandler",
+            "filename": os.path.join(LOG_DIR, "logs"),
+            "when": "midnight",
+            "formatter": "verbose",
+            "delay": True,
+        },
+        "database_file": {  # 🆕 ← додай цей блок
+                "level": "INFO",
+                "class": "logging.handlers.TimedRotatingFileHandler",
+                "filename": os.path.join(LOG_DIR, "database.log"),
+                "when": "midnight",
+                "backupCount": 7,
+                "formatter": "verbose",
+                "delay": True,
+        },
+    },
+    "loggers": {
+        "django": {
+            "handlers": ["console", "cafe_file"],
+            "level": "WARNING",
+        },
+        "django.db.backends": {
+            "handlers": ["console", "database_file"],
+            "level": "INFO",
+            "propagate": False,
+        },
+        "": {
+            "handlers": ["console", "cafe_file"],
+            "level": "INFO",
+            "propagate": False,
+        },
+        "faker": {
+            "handlers": ["console", "cafe_file"],
+            "level": "INFO",
+            "propagate": False,
+        },
+        "factory": {
+            "handlers": ["console", "cafe_file"],
+            "level": "INFO",
+            "propagate": False,
+        },
+    },
+}
+
 
 ROOT_URLCONF = "cafe_kitchen_service.urls"
 
