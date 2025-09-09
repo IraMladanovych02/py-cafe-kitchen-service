@@ -1,0 +1,4 @@
+[2025-07-26 16:00:13,770] WARNING django.server "GET /static/css/styles.css HTTP/1.1" 404 1969
+[2025-07-26 16:00:13,770] WARNING django.server "GET /static/css/styles.css HTTP/1.1" 404 1969
+[2025-07-26 16:00:17,185] WARNING django.server "GET /static/css/styles.css HTTP/1.1" 404 1969
+[2025-07-26 16:00:17,185] WARNING django.server "GET /static/css/styles.css HTTP/1.1" 404 1969
